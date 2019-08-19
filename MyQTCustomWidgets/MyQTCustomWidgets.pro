@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-        q7seg.cpp
+        q7seg.cpp \
+        qpot.cpp
 
 HEADERS += \
         mainwindow.h \
-        q7seg.h
+        q7seg.h \
+        qpot.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -13,9 +13,11 @@ MainWindow::MainWindow(QWidget *parent)
     q7seg2->setNumber(1);
     q7seg3 = new Q7seg();
     q7seg3->setNumber(2);
+    qpot = new QPot();
     mainLayout->addWidget(q7seg1);
     mainLayout->addWidget(q7seg2);
     mainLayout->addWidget(q7seg3);
+    mainLayout->addWidget(qpot);
 }
 
 MainWindow::~MainWindow()
