@@ -7,8 +7,239 @@ Q7seg::Q7seg(QWidget *parent) : QWidget(parent)
     brushColorOff = QColor(40, 40, 40, 255);
     penColorOff = QColor(60, 60, 60, 255);
     penWidth = 7;
-    //setColor(Red);
-    //setNumber(0);
+    setColor(Red);
+    setNumber(0);
+}
+
+void Q7seg::setNumber(int num)
+{
+    value = num;
+
+    switch (num)
+    {
+    case 0:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColor;
+        brushColorArr[2] = brushColor;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColorOff;
+        brushColorArr[4] = brushColorOff;
+        penColorArr[5] = penColor;
+        brushColorArr[5] = brushColor;
+        penColorArr[6] = penColor;
+        brushColorArr[6] = brushColor;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 1:
+        penColorArr[1] = penColorOff;
+        brushColorArr[1] = brushColorOff;
+        penColorArr[2] = penColorOff;
+        brushColorArr[2] = brushColorOff;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColorOff;
+        brushColorArr[4] = brushColorOff;
+        penColorArr[5] = penColorOff;
+        brushColorArr[5] = brushColorOff;
+        penColorArr[6] = penColorOff;
+        brushColorArr[6] = brushColorOff;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 2:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColorOff;
+        brushColorArr[2] = brushColorOff;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColor;
+        brushColorArr[4] = brushColor;
+        penColorArr[5] = penColor;
+        brushColorArr[5] = brushColor;
+        penColorArr[6] = penColor;
+        brushColorArr[6] = brushColor;
+        penColorArr[7] = penColorOff;
+        brushColorArr[7] = brushColorOff;
+        break;
+
+    case 3:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColorOff;
+        brushColorArr[2] = brushColorOff;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColor;
+        brushColorArr[4] = brushColor;
+        penColorArr[5] = penColorOff;
+        brushColorArr[5] = brushColorOff;
+        penColorArr[6] = penColor;
+        brushColorArr[6] = brushColor;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 4:
+        penColorArr[1] = penColorOff;
+        brushColorArr[1] = brushColorOff;
+        penColorArr[2] = penColor;
+        brushColorArr[2] = brushColor;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColor;
+        brushColorArr[4] = brushColor;
+        penColorArr[5] = penColorOff;
+        brushColorArr[5] = brushColorOff;
+        penColorArr[6] = penColorOff;
+        brushColorArr[6] = brushColorOff;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 5:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColor;
+        brushColorArr[2] = brushColor;
+        penColorArr[3] = penColorOff;
+        brushColorArr[3] = brushColorOff;
+        penColorArr[4] = penColor;
+        brushColorArr[4] = brushColor;
+        penColorArr[5] = penColorOff;
+        brushColorArr[5] = brushColorOff;
+        penColorArr[6] = penColor;
+        brushColorArr[6] = brushColor;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 6:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColor;
+        brushColorArr[2] = brushColor;
+        penColorArr[3] = penColorOff;
+        brushColorArr[3] = brushColorOff;
+        penColorArr[4] = penColor;
+        brushColorArr[4] = brushColor;
+        penColorArr[5] = penColor;
+        brushColorArr[5] = brushColor;
+        penColorArr[6] = penColor;
+        brushColorArr[6] = brushColor;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 7:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColorOff;
+        brushColorArr[2] = brushColorOff;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColorOff;
+        brushColorArr[4] = brushColorOff;
+        penColorArr[5] = penColorOff;
+        brushColorArr[5] = brushColorOff;
+        penColorArr[6] = penColorOff;
+        brushColorArr[6] = brushColorOff;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 8:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColor;
+        brushColorArr[2] = brushColor;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColor;
+        brushColorArr[4] = brushColor;
+        penColorArr[5] = penColor;
+        brushColorArr[5] = brushColor;
+        penColorArr[6] = penColor;
+        brushColorArr[6] = brushColor;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    case 9:
+        penColorArr[1] = penColor;
+        brushColorArr[1] = brushColor;
+        penColorArr[2] = penColor;
+        brushColorArr[2] = brushColor;
+        penColorArr[3] = penColor;
+        brushColorArr[3] = brushColor;
+        penColorArr[4] = penColor;
+        brushColorArr[4] = brushColor;
+        penColorArr[5] = penColorOff;
+        brushColorArr[5] = brushColorOff;
+        penColorArr[6] = penColor;
+        brushColorArr[6] = brushColor;
+        penColorArr[7] = penColor;
+        brushColorArr[7] = brushColor;
+        break;
+
+    default:
+        penColorArr[1] = penColorOff;
+        brushColorArr[1] = brushColorOff;
+        penColorArr[2] = penColorOff;
+        brushColorArr[2] = brushColorOff;
+        penColorArr[3] = penColorOff;
+        brushColorArr[3] = brushColorOff;
+        penColorArr[4] = penColorOff;
+        brushColorArr[4] = brushColorOff;
+        penColorArr[5] = penColorOff;
+        brushColorArr[5] = brushColorOff;
+        penColorArr[6] = penColorOff;
+        brushColorArr[6] = brushColorOff;
+        penColorArr[7] = penColorOff;
+        brushColorArr[7] = brushColorOff;
+        break;
+    }
+    update();
+}
+
+void Q7seg::setColor(NumColor color)
+{
+    ncolor = color;
+
+    switch (color)
+    {
+    case Red:
+    {
+        brushColor = QColor(255, 0, 0, 255);
+        penColor = QColor(193, 0, 0, 255);
+        break;
+    }
+    case Green:
+    {
+        brushColor = QColor(0, 255, 0, 255);
+        penColor = QColor(0, 193, 0, 255);
+        break;
+    }
+    case Yellow:
+    {
+        brushColor = QColor(255, 255, 0, 255);
+        penColor = QColor(193, 193, 0, 255);
+        break;
+    }
+    default:
+    {
+        brushColor = QColor(255, 0, 0, 255);
+        penColor = QColor(193, 0, 0, 255);
+        break;
+    }
+    }
+    setNumber(value);
+    update();
 }
 
 void Q7seg::paintEvent(QPaintEvent *)
@@ -52,7 +283,7 @@ void Q7seg::paintSegment()
     painter.setBrush(QBrush(brushColorArr[1], Qt::SolidPattern));
     painter.drawPath(seg1);
 
-    /*QPainterPath seg2;
+    QPainterPath seg2;
     QPolygonF pol2;
     pol2 << QPointF(60, 67) << QPointF(90, 97) << QPointF(90, 178) << QPointF(60, 193) << QPointF(60, 67);
     seg2.addPolygon(pol2);
@@ -98,5 +329,25 @@ void Q7seg::paintSegment()
     seg7.addPolygon(pol7);
     painter.setPen(QPen(penColorArr[7], penWidth, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     painter.setBrush(QBrush(brushColorArr[7], Qt::SolidPattern));
-    painter.drawPath(seg7);*/
+    painter.drawPath(seg7);
+}
+
+QSize Q7seg::minimumSizeHint() const
+{
+    return QSize(3.5, 4);
+}
+
+QSize Q7seg::sizeHint() const
+{
+    return QSize(350, 400);
+}
+
+QColor Q7seg::pen() const
+{
+    return penColor;
+}
+
+QColor Q7seg::brush() const
+{
+    return brushColor;
 }

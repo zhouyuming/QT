@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QHBoxLayout>
 
 #include "q7seg.h"
 
@@ -15,6 +16,8 @@ public:
 
 private:
     Q7seg *q7seg1;
+    Q7seg *q7seg2;
+    Q7seg *q7seg3;
 };
 
 #endif // MAINWINDOW_H
