@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
+        navlistview.cpp \
         q7seg.cpp \
         qpot.cpp
 
 HEADERS += \
         mainwindow.h \
+        navlistview.h \
         q7seg.h \
         qpot.h
 
