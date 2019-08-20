@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,15 +29,24 @@ SOURCES += \
         mainwindow.cpp \
         navlistview.cpp \
         q7seg.cpp \
-        qpot.cpp
+        qcol.cpp \
+        qpot.cpp \
+        qpot1.cpp \
+        qpotmet.cpp
 
 HEADERS += \
         mainwindow.h \
         navlistview.h \
         q7seg.h \
-        qpot.h
+        qcol.h \
+        qpot.h \
+        qpot1.h \
+        qpotmet.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    rc.qrc

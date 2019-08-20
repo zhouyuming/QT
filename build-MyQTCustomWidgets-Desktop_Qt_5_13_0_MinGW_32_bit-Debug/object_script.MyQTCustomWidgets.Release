@@ -1,0 +1,16 @@
+release/main.o
+release/mainwindow.o
+release/navlistview.o
+release/q7seg.o
+release/qcol.o
+release/qpot.o
+release/qpot1.o
+release/qpotmet.o
+release/qrc_rc.o
+release/moc_mainwindow.o
+release/moc_navlistview.o
+release/moc_q7seg.o
+release/moc_qcol.o
+release/moc_qpot.o
+release/moc_qpot1.o
+release/moc_qpotmet.o

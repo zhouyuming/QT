@@ -251,6 +251,7 @@ Makefile: ../MyQTCustomWidgets/MyQTCustomWidgets.pro D:/Qt/Qt5.13.0/5.13.0/mingw
 		../MyQTCustomWidgets/MyQTCustomWidgets.pro \
 		D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Widgets.prl \
 		D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Gui.prl \
+		D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Xml.prl \
 		D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Core.prl \
 		D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/qtmain.prl
 	$(QMAKE) -o Makefile ..\MyQTCustomWidgets\MyQTCustomWidgets.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -442,6 +443,7 @@ D:/Qt/Qt5.13.0/5.13.0/mingw73_32/mkspecs/features/lex.prf:
 ../MyQTCustomWidgets/MyQTCustomWidgets.pro:
 D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Widgets.prl:
 D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Gui.prl:
+D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Xml.prl:
 D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/Qt5Core.prl:
 D:/Qt/Qt5.13.0/5.13.0/mingw73_32/lib/qtmain.prl:
 qmake: FORCE

@@ -1,0 +1,16 @@
+debug/main.o
+debug/mainwindow.o
+debug/navlistview.o
+debug/q7seg.o
+debug/qcol.o
+debug/qpot.o
+debug/qpot1.o
+debug/qpotmet.o
+debug/qrc_rc.o
+debug/moc_mainwindow.o
+debug/moc_navlistview.o
+debug/moc_q7seg.o
+debug/moc_qcol.o
+debug/moc_qpot.o
+debug/moc_qpot1.o
+debug/moc_qpotmet.o
