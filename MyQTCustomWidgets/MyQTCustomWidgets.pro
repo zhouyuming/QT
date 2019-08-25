@@ -28,12 +28,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         navlistview.cpp \
+        pictureflow.cpp \
         q7seg.cpp \
         qbarruler.cpp \
         qbattery.cpp \
         qcol.cpp \
         qcurvechart.cpp \
         qfreq.cpp \
+        qlock.cpp \
         qpot.cpp \
         qpot1.cpp \
         qpotmet.cpp \
@@ -41,18 +43,22 @@ SOURCES += \
         qprog.cpp \
         qpush.cpp \
         qpush1.cpp \
-        qslide.cpp
+        qslide.cpp \
+        qvcursor.cpp \
+        qvumeter.cpp
 
 HEADERS += \
         fftw3.h \
         mainwindow.h \
         navlistview.h \
+        pictureflow.h \
         q7seg.h \
         qbarruler.h \
         qbattery.h \
         qcol.h \
         qcurvechart.h \
         qfreq.h \
+        qlock.h \
         qpot.h \
         qpot1.h \
         qpotmet.h \
@@ -60,7 +66,9 @@ HEADERS += \
         qprog.h \
         qpush.h \
         qpush1.h \
-        qslide.h
+        qslide.h \
+        qvcursor.h \
+        qvumeter.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

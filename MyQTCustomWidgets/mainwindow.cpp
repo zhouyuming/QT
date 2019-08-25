@@ -27,6 +27,11 @@ MainWindow::MainWindow(QWidget *parent)
     initQSlide();
     initQBattery();
     initQBarRuler();
+    initQCurveChart();
+    initPictureFlow();
+    initQVCursor();
+    initQVUMeter();
+    initQLock();
 }
 
 void MainWindow::initListView()
@@ -44,6 +49,8 @@ void MainWindow::initListView()
     listItem.append("电池电量显示|显示控件||");
     listItem.append("柱状标尺控件|显示控件||");
     listItem.append("曲线图|显示控件||");
+    listItem.append("图片浏览器|显示控件||");
+    listItem.append("VUMeter|显示控件||");
 
     listItem.append("控制控件||0|");
     listItem.append("Potentiometer|控制控件||");
@@ -51,6 +58,8 @@ void MainWindow::initListView()
     listItem.append("RGBA color selector|控制控件||");
     listItem.append("Power button|控制控件||");
     listItem.append("Alternative Push Button|控制控件||");
+    listItem.append("Vertical Cursor|控制控件||");
+    listItem.append("电子锁|控制控件||");
 
     listItem.append("信息管理||0|");
     listItem.append("学生管理|信息管理|0|");
@@ -320,6 +329,91 @@ void MainWindow::initQBarRuler(void)
     qbarrulerLayout1->addSpacing(100);
 }
 
+void MainWindow::initQCurveChart(void)
+{
+    QWidget *qcurvechartWidget = new QWidget();
+    mainStackedWidget->addWidget(qcurvechartWidget);
+
+    QVBoxLayout *qcurvechartLayout = new QVBoxLayout();
+    //QVBoxLayout *qbarrulerLayout1 = new QVBoxLayout();
+    qcurvechartWidget->setLayout(qcurvechartLayout);
+
+    QCurveChart *qcurvechart = new QCurveChart();
+    QCurveChart *qcurvechart1 = new QCurveChart();
+    qcurvechartLayout->addWidget(qcurvechart);
+    qcurvechartLayout->addWidget(qcurvechart1);
+}
+
+void MainWindow::initPictureFlow(void)
+{
+    QWidget *pictureflowWidget = new QWidget();
+    mainStackedWidget->addWidget(pictureflowWidget);
+
+    QVBoxLayout *pictureflowLayout = new QVBoxLayout();
+    pictureflowWidget->setLayout(pictureflowLayout);
+
+    PictureFlow *pictureflow = new PictureFlow();
+    pictureflow->addSlide(QPixmap("C:\\Users\\Administrator\\Desktop\\20171208140400726.png"));
+    pictureflow->addSlide(QPixmap("C:\\Users\\Administrator\\Desktop\\20171208140400726.png"));
+    pictureflow->addSlide(QPixmap("C:\\Users\\Administrator\\Desktop\\20171208140400726.png"));
+    pictureflowLayout->addWidget(pictureflow);
+
+}
+
+void MainWindow::initQVCursor(void)
+{
+    QWidget *qvcursorWidget = new QWidget();
+    mainStackedWidget->addWidget(qvcursorWidget);
+
+    QHBoxLayout *qvcursorLayout = new QHBoxLayout();
+    qvcursorWidget->setLayout(qvcursorLayout);
+
+    QVCursor *qvcursor = new QVCursor();
+    qvcursor->setColorBg(Qt::red);
+    QVCursor *qvcursor1 = new QVCursor();
+    qvcursor1->setColorBg(Qt::blue);
+    QVCursor *qvcursor2 = new QVCursor();
+    qvcursor2->setColorBg(Qt::green);
+    qvcursorLayout->addSpacing(200);
+    qvcursorLayout->addWidget(qvcursor);
+    qvcursorLayout->addWidget(qvcursor1);
+    qvcursorLayout->addWidget(qvcursor2);
+    qvcursorLayout->addSpacing(200);
+}
+
+void MainWindow::initQVUMeter(void)
+{
+    QWidget *qvumeterWidget = new QWidget();
+    mainStackedWidget->addWidget(qvumeterWidget);
+
+    QHBoxLayout *qvumeterLayout = new QHBoxLayout();
+    qvumeterWidget->setLayout(qvumeterLayout);
+
+    QVUMeter *qvumeter = new QVUMeter();
+    qvumeter->setColorBg(Qt::red);
+    QVUMeter *qvumeter1 = new QVUMeter();
+    qvumeter1->setColorBg(Qt::blue);
+    QVUMeter *qvumeter2 = new QVUMeter();
+    qvumeter2->setColorBg(Qt::green);
+    qvumeterLayout->addSpacing(200);
+    qvumeterLayout->addWidget(qvumeter);
+    qvumeterLayout->addWidget(qvumeter1);
+    qvumeterLayout->addWidget(qvumeter2);
+    qvumeterLayout->addSpacing(200);
+}
+
+void MainWindow::initQLock(void)
+{
+    QWidget *qlockWidget = new QWidget();
+    mainStackedWidget->addWidget(qlockWidget);
+
+    QHBoxLayout *qlockLayout = new QHBoxLayout();
+    qlockWidget->setLayout(qlockLayout);
+
+    QLock *qlock = new QLock();
+    qlockLayout->addWidget(qlock);
+}
+
 void MainWindow::on_listView_pressed(QModelIndex)
 {
     QModelIndex index = listView->currentIndex();
@@ -349,6 +443,14 @@ void MainWindow::on_listView_pressed(QModelIndex)
         mainStackedWidget->setCurrentIndex(10);
     }else if (text == "曲线图") {
         mainStackedWidget->setCurrentIndex(11);
+    }else if (text == "图片浏览器") {
+        mainStackedWidget->setCurrentIndex(12);
+    }else if (text == "Vertical Cursor") {
+        mainStackedWidget->setCurrentIndex(13);
+    }else if (text == "VUMeter") {
+        mainStackedWidget->setCurrentIndex(14);
+    }else if (text == "电子锁") {
+        mainStackedWidget->setCurrentIndex(15);
     }
 }
 

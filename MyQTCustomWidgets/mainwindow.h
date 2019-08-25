@@ -20,6 +20,10 @@
 #include "qbattery.h"
 #include "qbarruler.h"
 #include "qcurvechart.h"
+#include "pictureflow.h"
+#include "qvcursor.h"
+#include "qvumeter.h"
+#include "qlock.h"
 #include "navlistview.h"
 
 class MainWindow : public QMainWindow
@@ -46,6 +50,11 @@ private:
     void initQSlide(void);
     void initQBattery(void);
     void initQBarRuler(void);
+    void initQCurveChart(void);
+    void initPictureFlow(void);
+    void initQVCursor(void);
+    void initQVUMeter(void);
+    void initQLock(void);
 
 private:
     NavListView *listView;
