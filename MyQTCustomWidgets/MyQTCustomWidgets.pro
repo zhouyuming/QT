@@ -29,19 +29,38 @@ SOURCES += \
         mainwindow.cpp \
         navlistview.cpp \
         q7seg.cpp \
+        qbarruler.cpp \
+        qbattery.cpp \
         qcol.cpp \
+        qcurvechart.cpp \
+        qfreq.cpp \
         qpot.cpp \
         qpot1.cpp \
-        qpotmet.cpp
+        qpotmet.cpp \
+        qpower.cpp \
+        qprog.cpp \
+        qpush.cpp \
+        qpush1.cpp \
+        qslide.cpp
 
 HEADERS += \
+        fftw3.h \
         mainwindow.h \
         navlistview.h \
         q7seg.h \
+        qbarruler.h \
+        qbattery.h \
         qcol.h \
+        qcurvechart.h \
+        qfreq.h \
         qpot.h \
         qpot1.h \
-        qpotmet.h
+        qpotmet.h \
+        qpower.h \
+        qprog.h \
+        qpush.h \
+        qpush1.h \
+        qslide.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -50,3 +69,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     rc.qrc
+
+LIBS += C:\Users\Administrator\Desktop\QT\MyQTCustomWidgets\libfftw3-3.lib
