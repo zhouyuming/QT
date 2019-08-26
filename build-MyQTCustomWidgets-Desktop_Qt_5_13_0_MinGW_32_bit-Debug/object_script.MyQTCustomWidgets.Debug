@@ -1,5 +1,12 @@
+debug/flatui.o
+debug/iconhelper.o
+debug/imagecalendar.o
+debug/lednumber.o
+debug/lightbutton.o
+debug/lunarcalendarinfo.o
 debug/main.o
 debug/mainwindow.o
+debug/navbutton.o
 debug/navlistview.o
 debug/pictureflow.o
 debug/q7seg.o
@@ -20,7 +27,14 @@ debug/qslide.o
 debug/qvcursor.o
 debug/qvumeter.o
 debug/qrc_rc.o
+debug/moc_flatui.o
+debug/moc_iconhelper.o
+debug/moc_imagecalendar.o
+debug/moc_lednumber.o
+debug/moc_lightbutton.o
+debug/moc_lunarcalendarinfo.o
 debug/moc_mainwindow.o
+debug/moc_navbutton.o
 debug/moc_navlistview.o
 debug/moc_pictureflow.o
 debug/moc_q7seg.o

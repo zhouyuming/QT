@@ -5,6 +5,17 @@
 #include <QHBoxLayout>
 #include <QStackedWidget>
 #include <QSpacerItem>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QProgressBar>
+#include <QScrollBar>
+#include <QRadioButton>
+#include <QSlider>
+#include <QTableWidget>
+#include <QHeaderView>
+#include <QGuiApplication>
+
+#include "qdesktopwidget.h"
 
 #include "q7seg.h"
 #include "qpot.h"
@@ -24,6 +35,12 @@
 #include "qvcursor.h"
 #include "qvumeter.h"
 #include "qlock.h"
+#include "lightbutton.h"
+#include "lednumber.h"
+#include "imagecalendar.h"
+#include "flatui.h"
+#include "navbutton.h"
+#include "iconhelper.h"
 #include "navlistview.h"
 
 class MainWindow : public QMainWindow
@@ -55,6 +72,11 @@ private:
     void initQVCursor(void);
     void initQVUMeter(void);
     void initQLock(void);
+    void initLightButton(void);
+    void initLedNumber(void);
+    void initImageCalendar(void);
+    void initFlatUI(void);
+    void initNavButton(void);
 
 private:
     NavListView *listView;

@@ -1,5 +1,12 @@
+release/flatui.o
+release/iconhelper.o
+release/imagecalendar.o
+release/lednumber.o
+release/lightbutton.o
+release/lunarcalendarinfo.o
 release/main.o
 release/mainwindow.o
+release/navbutton.o
 release/navlistview.o
 release/pictureflow.o
 release/q7seg.o
@@ -20,7 +27,14 @@ release/qslide.o
 release/qvcursor.o
 release/qvumeter.o
 release/qrc_rc.o
+release/moc_flatui.o
+release/moc_iconhelper.o
+release/moc_imagecalendar.o
+release/moc_lednumber.o
+release/moc_lightbutton.o
+release/moc_lunarcalendarinfo.o
 release/moc_mainwindow.o
+release/moc_navbutton.o
 release/moc_navlistview.o
 release/moc_pictureflow.o
 release/moc_q7seg.o

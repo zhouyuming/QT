@@ -25,8 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        flatui.cpp \
+        iconhelper.cpp \
+        imagecalendar.cpp \
+        lednumber.cpp \
+        lightbutton.cpp \
+        lunarcalendarinfo.cpp \
         main.cpp \
         mainwindow.cpp \
+        navbutton.cpp \
         navlistview.cpp \
         pictureflow.cpp \
         q7seg.cpp \
@@ -49,7 +56,14 @@ SOURCES += \
 
 HEADERS += \
         fftw3.h \
+        flatui.h \
+        iconhelper.h \
+        imagecalendar.h \
+        lednumber.h \
+        lightbutton.h \
+        lunarcalendarinfo.h \
         mainwindow.h \
+        navbutton.h \
         navlistview.h \
         pictureflow.h \
         q7seg.h \

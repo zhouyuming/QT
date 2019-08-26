@@ -32,6 +32,11 @@ MainWindow::MainWindow(QWidget *parent)
     initQVCursor();
     initQVUMeter();
     initQLock();
+    initLightButton();
+    initLedNumber();
+    initImageCalendar();
+    initFlatUI();
+    initNavButton();
 }
 
 void MainWindow::initListView()
@@ -51,6 +56,9 @@ void MainWindow::initListView()
     listItem.append("曲线图|显示控件||");
     listItem.append("图片浏览器|显示控件||");
     listItem.append("VUMeter|显示控件||");
+    listItem.append("高亮发光按钮控件|显示控件||");
+    listItem.append("LED数字显示控件|显示控件||");
+    listItem.append("图像背景日历|显示控件||");
 
     listItem.append("控制控件||0|");
     listItem.append("Potentiometer|控制控件||");
@@ -61,10 +69,10 @@ void MainWindow::initListView()
     listItem.append("Vertical Cursor|控制控件||");
     listItem.append("电子锁|控制控件||");
 
-    listItem.append("信息管理||0|");
-    listItem.append("学生管理|信息管理|0|");
-    listItem.append("教师管理|信息管理|0|");
-    listItem.append("成绩管理|信息管理|0|");
+    listItem.append("界面风格||0|");
+    listItem.append("扁平化界面|界面风格|0|");
+    listItem.append("导航按钮|界面风格|0|");
+    listItem.append("成绩管理|界面风格|0|");
 
     listItem.append("帮助文档||1|");
 
@@ -414,6 +422,499 @@ void MainWindow::initQLock(void)
     qlockLayout->addWidget(qlock);
 }
 
+void MainWindow::initLightButton(void)
+{
+    QWidget *lightbuttonWidget = new QWidget();
+    mainStackedWidget->addWidget(lightbuttonWidget);
+
+    QHBoxLayout *lightbuttonLayout = new QHBoxLayout();
+    lightbuttonWidget->setLayout(lightbuttonLayout);
+
+    LightButton *lightbutton = new LightButton();
+    lightbuttonLayout->addWidget(lightbutton);
+}
+
+void MainWindow::initLedNumber(void)
+{
+    QWidget *lednumberWidget = new QWidget();
+    mainStackedWidget->addWidget(lednumberWidget);
+
+    QHBoxLayout *lednumberLayout = new QHBoxLayout();
+    lednumberWidget->setLayout(lednumberLayout);
+
+    LedNumber *lednumber = new LedNumber();
+    lednumberLayout->addWidget(lednumber);
+}
+
+void MainWindow::initImageCalendar(void)
+{
+    QWidget *imagecalendarWidget = new QWidget();
+    mainStackedWidget->addWidget(imagecalendarWidget);
+
+    QHBoxLayout *imagecalendarLayout = new QHBoxLayout();
+    imagecalendarWidget->setLayout(imagecalendarLayout);
+
+    ImageCalendar *imagecalendar = new ImageCalendar();
+    imagecalendar->setCalendarStyle(ImageCalendar::CalendarStyle_Red);
+    imagecalendarLayout->addWidget(imagecalendar);
+}
+
+void MainWindow::initFlatUI(void)
+{
+    QWidget *flatuiWidget = new QWidget();
+    mainStackedWidget->addWidget(flatuiWidget);
+
+    QVBoxLayout *flatuiLayout = new QVBoxLayout();
+    QHBoxLayout *flatuiLayout1 = new QHBoxLayout();
+    QHBoxLayout *flatuiLayout2 = new QHBoxLayout();
+    QHBoxLayout *flatuiLayout3 = new QHBoxLayout();
+    QHBoxLayout *flatuiLayout4 = new QHBoxLayout();
+    QHBoxLayout *flatuiLayout5 = new QHBoxLayout();
+    QHBoxLayout *flatuiLayout6 = new QHBoxLayout();
+    QVBoxLayout *flatuiLayout7 = new QVBoxLayout();
+    flatuiWidget->setLayout(flatuiLayout7);
+
+    QPushButton *btn1 = new QPushButton();
+    btn1->setText("测试按钮");
+    QPushButton *btn2 = new QPushButton();
+    btn2->setText("测试按钮");
+    QPushButton *btn3 = new QPushButton();
+    btn3->setText("测试按钮");
+    QPushButton *btn4 = new QPushButton();
+    btn4->setText("测试按钮");
+    FlatUI::Instance()->setPushButtonQss(btn1);
+    FlatUI::Instance()->setPushButtonQss(btn2, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6");
+    FlatUI::Instance()->setPushButtonQss(btn3, 5, 8, "#3498DB", "#FFFFFF", "#5DACE4", "#E5FEFF", "#2483C7", "#A0DAFB");
+    FlatUI::Instance()->setPushButtonQss(btn4, 5, 8, "#E74C3C", "#FFFFFF", "#EC7064", "#FFF5E7", "#DC2D1A", "#F5A996");
+    flatuiLayout1->addWidget(btn1);
+    flatuiLayout1->addWidget(btn2);
+    flatuiLayout1->addWidget(btn3);
+    flatuiLayout1->addWidget(btn4);
+
+    QLineEdit *lineedit1 = new QLineEdit();
+    QLineEdit *lineedit2 = new QLineEdit();
+    QLineEdit *lineedit3 = new QLineEdit();
+    QLineEdit *lineedit4 = new QLineEdit();
+    FlatUI::Instance()->setLineEditQss(lineedit1);
+    FlatUI::Instance()->setLineEditQss(lineedit2, 5, 2, "#DCE4EC", "#1ABC9C");
+    FlatUI::Instance()->setLineEditQss(lineedit3, 3, 1, "#DCE4EC", "#3498DB");
+    FlatUI::Instance()->setLineEditQss(lineedit4, 3, 1, "#DCE4EC", "#E74C3C");
+    flatuiLayout2->addWidget(lineedit1);
+    flatuiLayout2->addWidget(lineedit2);
+    flatuiLayout2->addWidget(lineedit3);
+    flatuiLayout2->addWidget(lineedit4);
+
+    QProgressBar *bar1 = new QProgressBar();
+    QProgressBar *bar2 = new QProgressBar();
+    FlatUI::Instance()->setProgressBarQss(bar1);
+    FlatUI::Instance()->setProgressBarQss(bar2, 8, 5, 9, "#E8EDF2", "#1ABC9C");
+    flatuiLayout3->addWidget(bar1);
+    flatuiLayout3->addWidget(bar2);
+
+    QSlider *slider1 = new QSlider();
+    slider1->setOrientation(Qt::Horizontal);
+    QSlider *slider2 = new QSlider();
+    slider2->setOrientation(Qt::Horizontal);
+    QSlider *slider3= new QSlider();
+    FlatUI::Instance()->setSliderQss(slider1);
+    FlatUI::Instance()->setSliderQss(slider2, 10, "#E8EDF2", "#E74C3C", "#E74C3C");
+    FlatUI::Instance()->setSliderQss(slider3, 10, "#E8EDF2", "#34495E", "#34495E");
+    flatuiLayout5->addWidget(slider1);
+    flatuiLayout5->addWidget(slider2);
+
+    QScrollBar *scrollbar = new QScrollBar();
+    QScrollBar *scrollbar1 = new QScrollBar();
+    scrollbar->setOrientation(Qt::Horizontal);
+    FlatUI::Instance()->setScrollBarQss(scrollbar);
+    FlatUI::Instance()->setScrollBarQss(scrollbar1, 8, 120, 20, "#606060", "#34495E", "#1ABC9C", "#E74C3C");
+
+    QRadioButton *radiobtn1 = new QRadioButton();
+    radiobtn1->setText("语文");
+    QRadioButton *radiobtn2 = new QRadioButton();
+    radiobtn2->setText("英语");
+    QRadioButton *radiobtn3 = new QRadioButton();
+    radiobtn3->setText("数学");
+    QRadioButton *radiobtn4 = new QRadioButton();
+    radiobtn4->setText("历史");
+    FlatUI::Instance()->setRadioButtonQss(radiobtn1);
+    FlatUI::Instance()->setRadioButtonQss(radiobtn2, 8, "#D7DBDE", "#1ABC9C");
+    FlatUI::Instance()->setRadioButtonQss(radiobtn3, 8, "#D7DBDE", "#3498DB");
+    FlatUI::Instance()->setRadioButtonQss(radiobtn4, 8, "#D7DBDE", "#E74C3C");
+    flatuiLayout4->addWidget(radiobtn1);
+    flatuiLayout4->addWidget(radiobtn2);
+    flatuiLayout4->addWidget(radiobtn3);
+    flatuiLayout4->addWidget(radiobtn4);
+
+    flatuiLayout->addLayout(flatuiLayout1);
+    flatuiLayout->addLayout(flatuiLayout2);
+    flatuiLayout->addLayout(flatuiLayout3);
+    flatuiLayout->addLayout(flatuiLayout5);
+    flatuiLayout->addWidget(scrollbar);
+    flatuiLayout->addLayout(flatuiLayout4);
+
+    flatuiLayout6->addLayout(flatuiLayout);
+    flatuiLayout6->addWidget(slider3);
+    flatuiLayout6->addWidget(scrollbar1);
+
+    QTableWidget *tableWidget = new QTableWidget();
+
+    //int width = qApp->desktop()->availableGeometry().width() - 120;
+    int width = flatuiWidget->width() - 120;
+    tableWidget->setColumnCount(5);
+    tableWidget->setColumnWidth(0, width * 0.06);
+    tableWidget->setColumnWidth(1, width * 0.10);
+    tableWidget->setColumnWidth(2, width * 0.06);
+    tableWidget->setColumnWidth(3, width * 0.10);
+    tableWidget->setColumnWidth(4, width * 0.20);
+    tableWidget->verticalHeader()->setDefaultSectionSize(25);
+
+    QStringList headText;
+    headText << "设备编号" << "设备名称" << "设备地址" << "告警内容" << "告警时间";
+    tableWidget->setHorizontalHeaderLabels(headText);
+    tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+    tableWidget->setAlternatingRowColors(true);
+    tableWidget->verticalHeader()->setVisible(false);
+    tableWidget->horizontalHeader()->setStretchLastSection(true);
+
+    //设置行高
+    tableWidget->setRowCount(300);
+
+    for (int i = 0; i < 300; i++) {
+        tableWidget->setRowHeight(i, 24);
+
+        QTableWidgetItem *itemDeviceID = new QTableWidgetItem(QString::number(i + 1));
+        QTableWidgetItem *itemDeviceName = new QTableWidgetItem(QString("测试设备%1").arg(i + 1));
+        QTableWidgetItem *itemDeviceAddr = new QTableWidgetItem(QString::number(i + 1));
+        QTableWidgetItem *itemContent = new QTableWidgetItem("防区告警");
+        QTableWidgetItem *itemTime = new QTableWidgetItem(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+
+        tableWidget->setItem(i, 0, itemDeviceID);
+        tableWidget->setItem(i, 1, itemDeviceName);
+        tableWidget->setItem(i, 2, itemDeviceAddr);
+        tableWidget->setItem(i, 3, itemContent);
+        tableWidget->setItem(i, 4, itemTime);
+    }
+
+
+    flatuiLayout7->addLayout(flatuiLayout6);
+    flatuiLayout7->addWidget(tableWidget);
+}
+
+void MainWindow::initNavButton(void)
+{
+    QWidget *navbuttonWidget = new QWidget();
+    mainStackedWidget->addWidget(navbuttonWidget);
+
+    QHBoxLayout *navbuttonLayout = new QHBoxLayout();
+    QVBoxLayout *navbuttonLayout1 = new QVBoxLayout();
+    navbuttonWidget->setLayout(navbuttonLayout);
+
+    //从图形字体获得图片,也可以从资源文件或者路径文件获取
+    QChar icon = 0xf061;
+    QPixmap iconNormal = IconHelper::Instance()->getPixmap(QColor(100, 100, 100).name(), icon);
+    QPixmap iconHover = IconHelper::Instance()->getPixmap(QColor(255, 255, 255).name(), icon);
+    QPixmap iconCheck = IconHelper::Instance()->getPixmap(QColor(255, 255, 255).name(), icon);
+
+    QList<NavButton *> btns1;
+    QList<NavButton *> btns2;
+    QList<NavButton *> btns3;
+    QList<NavButton *> btns4;
+    QList<NavButton *> btns5;
+    QList<NavButton *> btns6;
+    QList<NavButton *> btns7;
+
+    NavButton *navButton11 = new NavButton();
+    navButton11->setText("学生管理");
+    NavButton *navButton12 = new NavButton();
+    navButton12->setText("教师管理");
+    NavButton *navButton13 = new NavButton();
+    navButton13->setText("成绩管理");
+    NavButton *navButton14 = new NavButton();
+    navButton14->setText("记录查询");
+
+    NavButton *navButton21 = new NavButton();
+    NavButton *navButton22 = new NavButton();
+    NavButton *navButton23 = new NavButton();
+    NavButton *navButton24 = new NavButton();
+
+    NavButton *navButton31 = new NavButton();
+    NavButton *navButton32 = new NavButton();
+    NavButton *navButton33 = new NavButton();
+    NavButton *navButton34 = new NavButton();
+
+    NavButton *navButton41 = new NavButton();
+    NavButton *navButton42 = new NavButton();
+    NavButton *navButton43 = new NavButton();
+    NavButton *navButton44 = new NavButton();
+
+    NavButton *navButton51 = new NavButton();
+    NavButton *navButton52 = new NavButton();
+    NavButton *navButton53 = new NavButton();
+    NavButton *navButton54 = new NavButton();
+    NavButton *navButton55 = new NavButton();
+
+    NavButton *navButton61 = new NavButton();
+    NavButton *navButton62 = new NavButton();
+    NavButton *navButton63 = new NavButton();
+    NavButton *navButton64 = new NavButton();
+    NavButton *navButton65 = new NavButton();
+
+    NavButton *navButton71 = new NavButton();
+    NavButton *navButton72 = new NavButton();
+    NavButton *navButton73 = new NavButton();
+    NavButton *navButton74 = new NavButton();
+    NavButton *navButton75 = new NavButton();
+    NavButton *navButton76 = new NavButton();
+
+    btns1 << navButton11 << navButton12 << navButton13 << navButton14;
+    for (int i = 0; i < btns1.count(); i++) {
+        btns1.at(i)->setPaddingLeft(32);
+        btns1.at(i)->setLineSpace(6);
+
+        btns1.at(i)->setShowIcon(true);
+        btns1.at(i)->setIconSpace(15);
+        btns1.at(i)->setIconSize(QSize(10, 10));
+        btns1.at(i)->setIconNormal(iconNormal);
+        btns1.at(i)->setIconHover(iconHover);
+        btns1.at(i)->setIconCheck(iconCheck);
+
+        //connect(btns1.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick1()));
+
+        navbuttonLayout1->addWidget(btns1.at(i));
+    }
+    navbuttonLayout->addLayout(navbuttonLayout1);
+
+    QList<QChar> pixChar;
+    pixChar << 0xf2ba << 0xf002 << 0xf013 << 0xf021 << 0xf0e0 << 0xf135;
+    QColor normalBgColor = QColor("#2D9191");
+    QColor hoverBgColor = QColor("#187294");
+    QColor checkBgColor = QColor("#145C75");
+    QColor normalTextColor = QColor("#FFFFFF");
+    QColor hoverTextColor = QColor("#FFFFFF");
+    QColor checkTextColor = QColor("#FFFFFF");
+
+    btns2 << navButton21 << navButton22 << navButton23 << navButton24;
+    for (int i = 0; i < btns2.count(); i++) {
+        btns2.at(i)->setPaddingLeft(35);
+        btns2.at(i)->setLineSpace(0);
+        btns2.at(i)->setLineWidth(8);
+        btns2.at(i)->setLineColor(QColor(255, 107, 107));
+        btns2.at(i)->setShowTriangle(true);
+
+        btns2.at(i)->setShowIcon(true);
+        btns2.at(i)->setIconSpace(10);
+        btns2.at(i)->setIconSize(QSize(22, 22));
+
+        //分开设置图标
+        QChar icon = pixChar.at(i);
+        QPixmap iconNormal = IconHelper::Instance()->getPixmap(normalTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconHover = IconHelper::Instance()->getPixmap(hoverTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconCheck = IconHelper::Instance()->getPixmap(checkTextColor.name(), icon, 15, 30, 30);
+
+        btns2.at(i)->setIconNormal(iconNormal);
+        btns2.at(i)->setIconHover(iconHover);
+        btns2.at(i)->setIconCheck(iconCheck);
+
+        btns2.at(i)->setNormalBgColor(normalBgColor);
+        btns2.at(i)->setHoverBgColor(hoverBgColor);
+        btns2.at(i)->setCheckBgColor(checkBgColor);
+        btns2.at(i)->setNormalTextColor(normalTextColor);
+        btns2.at(i)->setHoverTextColor(hoverTextColor);
+        btns2.at(i)->setCheckTextColor(checkTextColor);
+
+        connect(btns2.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick2()));
+    }
+
+    normalBgColor = QColor("#292F38");
+    hoverBgColor = QColor("#1D2025");
+    checkBgColor = QColor("#1D2025");
+    normalTextColor = QColor("#54626F");
+    hoverTextColor = QColor("#FDFDFD");
+    checkTextColor = QColor("#FDFDFD");
+
+    btns3 << navButton31 << navButton32 << navButton33 << navButton34;
+    for (int i = 0; i < btns3.count(); i++) {
+        btns3.at(i)->setPaddingLeft(35);
+        btns3.at(i)->setLineWidth(10);
+        btns3.at(i)->setLineColor(QColor("#029FEA"));
+        btns3.at(i)->setShowTriangle(true);
+        btns3.at(i)->setTextAlign(NavButton::TextAlign_Left);
+        btns3.at(i)->setTrianglePosition(NavButton::TrianglePosition_Left);
+        btns3.at(i)->setLinePosition(NavButton::LinePosition_Right);
+
+        btns3.at(i)->setShowIcon(true);
+        btns3.at(i)->setIconSpace(10);
+        btns3.at(i)->setIconSize(QSize(22, 22));
+
+        //分开设置图标
+        QChar icon = pixChar.at(i);
+        QPixmap iconNormal = IconHelper::Instance()->getPixmap(normalTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconHover = IconHelper::Instance()->getPixmap(hoverTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconCheck = IconHelper::Instance()->getPixmap(checkTextColor.name(), icon, 15, 30, 30);
+
+        btns3.at(i)->setIconNormal(iconNormal);
+        btns3.at(i)->setIconHover(iconHover);
+        btns3.at(i)->setIconCheck(iconCheck);
+
+        btns3.at(i)->setNormalBgColor(normalBgColor);
+        btns3.at(i)->setHoverBgColor(hoverBgColor);
+        btns3.at(i)->setCheckBgColor(checkBgColor);
+        btns3.at(i)->setNormalTextColor(normalTextColor);
+        btns3.at(i)->setHoverTextColor(hoverTextColor);
+        btns3.at(i)->setCheckTextColor(checkTextColor);
+
+        connect(btns3.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick3()));
+    }
+
+    icon = 0xf105;
+    iconNormal = IconHelper::Instance()->getPixmap(QColor(100, 100, 100).name(), icon, 12, 15, 15);
+    iconHover = IconHelper::Instance()->getPixmap(QColor(255, 255, 255).name(), icon, 12, 15, 15);
+    iconCheck = IconHelper::Instance()->getPixmap(QColor(255, 255, 255).name(), icon, 12, 15, 15);
+
+    btns4 << navButton41 << navButton42 << navButton43 << navButton44;
+    for (int i = 0; i < btns4.count(); i++) {
+        btns4.at(i)->setLineSpace(10);
+        btns4.at(i)->setLineWidth(10);
+        btns4.at(i)->setPaddingRight(25);
+        btns4.at(i)->setShowTriangle(true);
+        btns4.at(i)->setTextAlign(NavButton::TextAlign_Right);
+        btns4.at(i)->setTrianglePosition(NavButton::TrianglePosition_Left);
+        btns4.at(i)->setLinePosition(NavButton::LinePosition_Right);
+
+        btns4.at(i)->setShowIcon(true);
+        btns4.at(i)->setIconSpace(25);
+        btns4.at(i)->setIconSize(QSize(15, 15));
+        btns4.at(i)->setIconNormal(iconNormal);
+        btns4.at(i)->setIconHover(iconHover);
+        btns4.at(i)->setIconCheck(iconCheck);
+
+        connect(btns4.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick4()));
+    }
+
+    QFont font;
+    font.setPixelSize(15);
+    font.setBold(true);
+
+    normalBgColor = QColor("#292929");
+    hoverBgColor = QColor("#064077");
+    checkBgColor = QColor("#10689A");
+    normalTextColor = QColor("#FFFFFF");
+    hoverTextColor = Qt::yellow;
+    checkTextColor = QColor("#FFFFFF");
+
+    btns5 << navButton51 << navButton52 << navButton53 << navButton54 << navButton55;
+    for (int i = 0; i < btns5.count(); i++) {
+        btns5.at(i)->setFont(font);
+        btns5.at(i)->setPaddingLeft(20);
+        btns5.at(i)->setShowLine(false);
+        btns5.at(i)->setTextAlign(NavButton::TextAlign_Center);
+        btns5.at(i)->setLinePosition(NavButton::LinePosition_Bottom);
+
+        btns5.at(i)->setShowIcon(true);
+        btns5.at(i)->setIconSpace(15);
+        btns5.at(i)->setIconSize(QSize(22, 22));
+
+        //分开设置图标
+        QChar icon = pixChar.at(i);
+        QPixmap iconNormal = IconHelper::Instance()->getPixmap(normalTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconHover = IconHelper::Instance()->getPixmap(hoverTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconCheck = IconHelper::Instance()->getPixmap(checkTextColor.name(), icon, 15, 30, 30);
+
+        btns5.at(i)->setIconNormal(iconNormal);
+        btns5.at(i)->setIconHover(iconHover);
+        btns5.at(i)->setIconCheck(iconCheck);
+
+        btns5.at(i)->setNormalBgColor(normalBgColor);
+        btns5.at(i)->setHoverBgColor(hoverBgColor);
+        btns5.at(i)->setCheckBgColor(checkBgColor);
+        btns5.at(i)->setNormalTextColor(normalTextColor);
+        btns5.at(i)->setHoverTextColor(hoverTextColor);
+        btns5.at(i)->setCheckTextColor(checkTextColor);
+
+        connect(btns5.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick5()));
+    }
+
+    normalBgColor = QColor("#E6393D");
+    hoverBgColor = QColor("#EE0000");
+    checkBgColor = QColor("#A40001");
+    normalTextColor = QColor("#FFFFFF");
+    hoverTextColor = QColor("#FFFFFF");
+    checkTextColor = QColor("#FFFFFF");
+
+    btns6 << navButton61 << navButton62 << navButton63 << navButton64 << navButton65;
+    for (int i = 0; i < btns6.count(); i++) {
+        btns6.at(i)->setFont(font);
+        btns6.at(i)->setPaddingLeft(20);
+        btns6.at(i)->setShowLine(false);
+        btns6.at(i)->setTextAlign(NavButton::TextAlign_Center);
+        btns6.at(i)->setLinePosition(NavButton::LinePosition_Bottom);
+
+        btns6.at(i)->setShowIcon(true);
+        btns6.at(i)->setIconSpace(15);
+        btns6.at(i)->setIconSize(QSize(22, 22));
+
+        //分开设置图标
+        QChar icon = pixChar.at(i);
+        QPixmap iconNormal = IconHelper::Instance()->getPixmap(normalTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconHover = IconHelper::Instance()->getPixmap(hoverTextColor.name(), icon, 15, 30, 30);
+        QPixmap iconCheck = IconHelper::Instance()->getPixmap(checkTextColor.name(), icon, 15, 30, 30);
+
+        btns6.at(i)->setIconNormal(iconNormal);
+        btns6.at(i)->setIconHover(iconHover);
+        btns6.at(i)->setIconCheck(iconCheck);
+
+        btns6.at(i)->setNormalBgColor(normalBgColor);
+        btns6.at(i)->setHoverBgColor(hoverBgColor);
+        btns6.at(i)->setCheckBgColor(checkBgColor);
+        btns6.at(i)->setNormalTextColor(normalTextColor);
+        btns6.at(i)->setHoverTextColor(hoverTextColor);
+        btns6.at(i)->setCheckTextColor(checkTextColor);
+
+        connect(btns6.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick6()));
+    }
+
+    //设置背景色为画刷
+    QLinearGradient normalBgBrush(0, 0, 0, navButton61->height());
+    normalBgBrush.setColorAt(0.0, QColor("#3985BF"));
+    normalBgBrush.setColorAt(0.5, QColor("#2972A9"));
+    normalBgBrush.setColorAt(1.0, QColor("#1C6496"));
+
+    QLinearGradient hoverBgBrush(0, 0, 0, navButton61->height());
+    hoverBgBrush.setColorAt(0.0, QColor("#4897D1"));
+    hoverBgBrush.setColorAt(0.5, QColor("#3283BC"));
+    hoverBgBrush.setColorAt(1.0, QColor("#3088C3"));
+
+    btns7 << navButton71 << navButton72 << navButton73 << navButton74 << navButton75 << navButton76;
+    for (int i = 0; i < btns7.count(); i++) {
+        btns7.at(i)->setFont(font);
+        btns7.at(i)->setPaddingLeft(0);
+        btns7.at(i)->setLineSpace(0);
+        btns7.at(i)->setShowTriangle(true);
+        btns7.at(i)->setTextAlign(NavButton::TextAlign_Center);
+        btns7.at(i)->setTrianglePosition(NavButton::TrianglePosition_Bottom);
+        btns7.at(i)->setLinePosition(NavButton::LinePosition_Top);
+
+        btns7.at(i)->setNormalTextColor(normalTextColor);
+        btns7.at(i)->setHoverTextColor(hoverTextColor);
+        btns7.at(i)->setCheckTextColor(checkTextColor);
+
+        btns7.at(i)->setNormalBgBrush(normalBgBrush);
+        btns7.at(i)->setHoverBgBrush(hoverBgBrush);
+        btns7.at(i)->setCheckBgBrush(hoverBgBrush);
+
+        connect(btns7.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick7()));
+    }
+
+    navButton11->setChecked(true);
+    navButton23->setChecked(true);
+    navButton31->setChecked(true);
+    navButton44->setChecked(true);
+    navButton53->setChecked(true);
+    navButton61->setChecked(true);
+    navButton75->setChecked(true);
+}
 void MainWindow::on_listView_pressed(QModelIndex)
 {
     QModelIndex index = listView->currentIndex();
@@ -451,6 +952,16 @@ void MainWindow::on_listView_pressed(QModelIndex)
         mainStackedWidget->setCurrentIndex(14);
     }else if (text == "电子锁") {
         mainStackedWidget->setCurrentIndex(15);
+    }else if (text == "高亮发光按钮控件") {
+        mainStackedWidget->setCurrentIndex(16);
+    }else if (text == "LED数字显示控件") {
+        mainStackedWidget->setCurrentIndex(17);
+    }else if (text == "图像背景日历") {
+        mainStackedWidget->setCurrentIndex(18);
+    }else if (text == "扁平化界面") {
+        mainStackedWidget->setCurrentIndex(19);
+    }else if (text == "导航按钮") {
+        mainStackedWidget->setCurrentIndex(20);
     }
 }
 
