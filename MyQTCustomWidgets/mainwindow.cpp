@@ -607,8 +607,15 @@ void MainWindow::initNavButton(void)
     QWidget *navbuttonWidget = new QWidget();
     mainStackedWidget->addWidget(navbuttonWidget);
 
-    QHBoxLayout *navbuttonLayout = new QHBoxLayout();
+    QVBoxLayout *navbuttonLayout = new QVBoxLayout();
     QVBoxLayout *navbuttonLayout1 = new QVBoxLayout();
+    QVBoxLayout *navbuttonLayout2 = new QVBoxLayout();
+    QVBoxLayout *navbuttonLayout3 = new QVBoxLayout();
+    QVBoxLayout *navbuttonLayout4 = new QVBoxLayout();
+    QHBoxLayout *navbuttonLayout5 = new QHBoxLayout();
+    QHBoxLayout *navbuttonLayout6 = new QHBoxLayout();
+    QHBoxLayout *navbuttonLayout7 = new QHBoxLayout();
+    QHBoxLayout *navbuttonLayout8 = new QHBoxLayout();
     navbuttonWidget->setLayout(navbuttonLayout);
 
     //从图形字体获得图片,也可以从资源文件或者路径文件获取
@@ -635,38 +642,66 @@ void MainWindow::initNavButton(void)
     navButton14->setText("记录查询");
 
     NavButton *navButton21 = new NavButton();
+    navButton21->setText("访客登记");
     NavButton *navButton22 = new NavButton();
+    navButton22->setText("记录查询");
     NavButton *navButton23 = new NavButton();
+    navButton23->setText("系统设置");
     NavButton *navButton24 = new NavButton();
+    navButton24->setText("系统重启");
 
     NavButton *navButton31 = new NavButton();
+    navButton31->setText("学生管理");
     NavButton *navButton32 = new NavButton();
+    navButton32->setText("教师管理");
     NavButton *navButton33 = new NavButton();
+    navButton33->setText("成绩管理");
     NavButton *navButton34 = new NavButton();
+    navButton34->setText("记录查询");
 
     NavButton *navButton41 = new NavButton();
+    navButton41->setText("学生管理");
     NavButton *navButton42 = new NavButton();
+    navButton42->setText("教师管理");
     NavButton *navButton43 = new NavButton();
+    navButton43->setText("成绩管理");
     NavButton *navButton44 = new NavButton();
+    navButton44->setText("记录查询");
 
     NavButton *navButton51 = new NavButton();
+    navButton51->setText("首页");
     NavButton *navButton52 = new NavButton();
+    navButton52->setText("论坛");
     NavButton *navButton53 = new NavButton();
+    navButton53->setText("作品");
     NavButton *navButton54 = new NavButton();
+    navButton54->setText("群组");
     NavButton *navButton55 = new NavButton();
+    navButton55->setText("帮助");
 
     NavButton *navButton61 = new NavButton();
+    navButton61->setText("首页");
     NavButton *navButton62 = new NavButton();
+    navButton62->setText("论坛");
     NavButton *navButton63 = new NavButton();
+    navButton63->setText("作品");
     NavButton *navButton64 = new NavButton();
+    navButton64->setText("群组");
     NavButton *navButton65 = new NavButton();
+    navButton65->setText("帮助");
 
     NavButton *navButton71 = new NavButton();
+    navButton71->setText("首页");
     NavButton *navButton72 = new NavButton();
+    navButton72->setText("论坛");
     NavButton *navButton73 = new NavButton();
+    navButton73->setText("Qt下载");
     NavButton *navButton74 = new NavButton();
+    navButton74->setText("作品展");
     NavButton *navButton75 = new NavButton();
+    navButton75->setText("群组");
     NavButton *navButton76 = new NavButton();
+    navButton76->setText("个人中心");
 
     btns1 << navButton11 << navButton12 << navButton13 << navButton14;
     for (int i = 0; i < btns1.count(); i++) {
@@ -684,7 +719,6 @@ void MainWindow::initNavButton(void)
 
         navbuttonLayout1->addWidget(btns1.at(i));
     }
-    navbuttonLayout->addLayout(navbuttonLayout1);
 
     QList<QChar> pixChar;
     pixChar << 0xf2ba << 0xf002 << 0xf013 << 0xf021 << 0xf0e0 << 0xf135;
@@ -724,7 +758,8 @@ void MainWindow::initNavButton(void)
         btns2.at(i)->setHoverTextColor(hoverTextColor);
         btns2.at(i)->setCheckTextColor(checkTextColor);
 
-        connect(btns2.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick2()));
+        //connect(btns2.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick2()));
+        navbuttonLayout2->addWidget(btns2.at(i));
     }
 
     normalBgColor = QColor("#292F38");
@@ -765,8 +800,10 @@ void MainWindow::initNavButton(void)
         btns3.at(i)->setHoverTextColor(hoverTextColor);
         btns3.at(i)->setCheckTextColor(checkTextColor);
 
-        connect(btns3.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick3()));
+        //connect(btns3.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick3()));
+        navbuttonLayout3->addWidget(btns3.at(i));
     }
+
 
     icon = 0xf105;
     iconNormal = IconHelper::Instance()->getPixmap(QColor(100, 100, 100).name(), icon, 12, 15, 15);
@@ -790,7 +827,8 @@ void MainWindow::initNavButton(void)
         btns4.at(i)->setIconHover(iconHover);
         btns4.at(i)->setIconCheck(iconCheck);
 
-        connect(btns4.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick4()));
+        //connect(btns4.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick4()));
+        navbuttonLayout4->addWidget(btns4.at(i));
     }
 
     QFont font;
@@ -833,8 +871,14 @@ void MainWindow::initNavButton(void)
         btns5.at(i)->setHoverTextColor(hoverTextColor);
         btns5.at(i)->setCheckTextColor(checkTextColor);
 
-        connect(btns5.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick5()));
+        //connect(btns5.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick5()));
+        navbuttonLayout5->addWidget(btns5.at(i));
     }
+
+    navbuttonLayout6->addLayout(navbuttonLayout1);
+    navbuttonLayout6->addLayout(navbuttonLayout2);
+    navbuttonLayout6->addLayout(navbuttonLayout3);
+    navbuttonLayout6->addLayout(navbuttonLayout4);
 
     normalBgColor = QColor("#E6393D");
     hoverBgColor = QColor("#EE0000");
@@ -872,7 +916,8 @@ void MainWindow::initNavButton(void)
         btns6.at(i)->setHoverTextColor(hoverTextColor);
         btns6.at(i)->setCheckTextColor(checkTextColor);
 
-        connect(btns6.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick6()));
+        //connect(btns6.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick6()));
+        navbuttonLayout7->addWidget(btns6.at(i));
     }
 
     //设置背景色为画刷
@@ -904,8 +949,14 @@ void MainWindow::initNavButton(void)
         btns7.at(i)->setHoverBgBrush(hoverBgBrush);
         btns7.at(i)->setCheckBgBrush(hoverBgBrush);
 
-        connect(btns7.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick7()));
+        //connect(btns7.at(i), SIGNAL(clicked(bool)), this, SLOT(buttonClick7()));
+        navbuttonLayout8->addWidget(btns7.at(i));
     }
+
+    navbuttonLayout->addLayout(navbuttonLayout6);
+    navbuttonLayout->addLayout(navbuttonLayout5);
+    navbuttonLayout->addLayout(navbuttonLayout7);
+    navbuttonLayout->addLayout(navbuttonLayout8);
 
     navButton11->setChecked(true);
     navButton23->setChecked(true);
